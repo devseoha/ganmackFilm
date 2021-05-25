@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "mooo4030",
+    "password": "seoha123!",
+    "database": "mooo4030",
+    "host": "mooo4030.cafe24app.com",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
