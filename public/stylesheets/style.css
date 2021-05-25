@@ -1,8 +1,38 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* reset */
+html,body,.ganmack div,.ganmack span,.ganmack h1,.ganmack h2,.ganmack h3,.ganmack h4,.ganmack h5,.ganmack h6,.ganmack p,.ganmack a,.ganmack em,.ganmack img,.ganmack strong,.ganmack i,.ganmack dl,.ganmack dt,.ganmack dd,.ganmack ol,.ganmack ul,.ganmack li,.ganmack fieldset,.ganmack form,.ganmack label,.ganmack legend,.ganmack div,.ganmack .content .banner span, .ganmack .content .banner a,.ganmack .content .banner em,.ganmack .content .banner p{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 16px;
+  line-height: 1;
+  color: #000000;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 0;
+  word-break: keep-all;
+}
+.ganmack ol,
+.ganmack ul,
+.ganmack ul,
+.ganmack li {
+  list-style: none;
 }
 
-a {
-  color: #00B7FF;
-}
+.ganmack a,
+.ganmack a{color: #000000; text-decoration: none;}
+
+.ganmack a:hover,
+.ganmack a:active,
+.ganmack a:active,
+.ganmack a:hover{color: #000000; text-decoration: none;}
+
+.ganmack .container{width: 1200px; margin: 0 auto;}
+.ganmack img{width: 360px; height: auto;}
+
+/* layout */
+.ganmack header{width: 100%; position: fixed; top: 0; left: 0; padding: 20px 0;}
+.ganmack .main_banner{display: flex; align-items: center; height: 100vh; background: url(/img/main.jpg); background-size: 100%;}
+
+.ganmack header>div{display: flex; justify-content: space-between; align-items: center;}
+.ganmack header>div h1,.ganmack header>div ul li a{color: #fff;}
+.ganmack header>div ul{display: flex; justify-content: space-between; align-items: center;}
