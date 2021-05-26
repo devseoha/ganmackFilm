@@ -3,8 +3,9 @@
     "username": "mooo4030",
     "password": "seoha123!",
     "database": "mooo4030",
-    "host": "mooo4030.cafe24app.com",
-    "dialect": "mysql"
+    "host": "seoha1.cafe24app.com",
+    "dialect": "mysql",
+    "operatorsAliases": false
   },
   "test": {
     "username": "root",
@@ -19,5 +20,8 @@
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
+  },
+  "jwt":{
+    "secret" : "seoha"
   }
 }
