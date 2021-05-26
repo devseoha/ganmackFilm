@@ -1,0 +1,14 @@
+/* ganmack.css */
+.ganmack .container{width: 1200px; margin: 0 auto;}
+.ganmack img{width: 360px; height: auto;}
+
+/* layout */
+.ganmack header{width: 100%; position: fixed; top: 0; left: 0; padding: 50px 0;}
+.ganmack header img{width: 300px;}
+.ganmack .main_banner{display: flex; align-items: center; height: 100vh; background: url(/img/main.jpg) no-repeat 50% 0; background-size: cover;}
+
+.ganmack header>div{display: flex; justify-content: space-between; align-items: flex-end;}
+.ganmack header>div h1,.ganmack header>div h1 span,.ganmack header>div ul li a{color: #fff;}
+.ganmack header>div ul{display: flex; justify-content: space-between; align-items: center;}
+.ganmack header>div ul li a{font-size: 20px; margin-left: 30px; font-weight: 200; opacity: 0.5;}
+.ganmack header>div ul li.on a,.ganmack header>div ul li:hover a{color: #fff; opacity: 1;}
