@@ -1,95 +1,58 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GANMACK FILM FESTIVAL</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Login | GANMACK FILM FESTIVAL</title>
+    <link rel='stylesheet' href='/stylesheets/reset.css' />
+    <link rel='stylesheet' href='/stylesheets/common.css' />
+    <link rel='stylesheet' href='/stylesheets/index.css' />
   </head>
   
-  <body class="ganmack">
-    <header>
-      <div class="container">
-        <h1>GANMACK.FILM <span>festival.</span></h1>
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Nominees</a></li>
-          <li><a href="#">Commu</a></li>
-          <li><a href="#">Alcohol</a></li>
-        </ul>
-      </div>
-    </header>
-    <div>
-      <section class="main_banner">
-        <div class="container">
-          <h2>주종은<br />우리의 삶의 방식이다</h2>
-          <p>간맥영화제는 어떠한 술도 존중합니다</p>
-        </div>
-      </section>
-      <section class="posters container">
-        <em>Film Festival</em>
-        <h2>권위있는 간맥영화제의<br />쟁쟁한 수상 후보들을 만나보세요</h2>
-        <ul>
-          <li>
-            <a href="#">
-              <img src="/img/B cut.jpg" alt="new person">
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="/img/coffee.monster22.jpg" alt="new person">
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="/img/ganmackFilm.jpg" alt="new person">
-            </a>
-          </li>
-        </ul>
-      </section>
-      <section class="cummu container">
-        <div>
-          <em>Community</em>
-          <h2>영화에 대한<br />여러분의 의견을 들려주세요</h2>
-        </div>
-        <div>
-          <input type="text" placeholder="내용을 입력해주세요">
-          <input type="text" placeholder="닉네임을 입력해주세요">
-        </div>
-        <div>
-          <ul>
-            <li>
-              <em>작성자</em>
-              <p>내용내용내용내용내용내용내용내용내용내용내용내용내용내용</p>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section class="container">
-        <div>
-          <em>Alcohol</em>
-          <h2>당신의 간맥타임을<br />소개해주세요</h2>
-          <p>Alcohol 바로가기</p>
-        </div>
-        <div>
-          <div>
-            <em>Alcohol Record</em>
-            <h2>주정 기록들을 <br />보실 수 있습니다</h2>
-          </div>
-          <div>
-            <em>Alcohol Review</em>
-            <h2>주류 리뷰를 <br />보실 수 있습니다</h2>
-          </div>
-        </div>
-      </section>
-    </div>
-    <footer>
-      <div class="container">
-        <h3>GANMACK.FILM <span>festival.</span></h3>
-        <p>planner. Minji Seo</p>
-        <p>designer. Gahee Kim / Yeeun Kim</p>
-        <p>developer. Seoha Kang / Hyunji Kim</p>
+  <body class="ganmack_login container">
+    <h1>
+      <img src="/img/login_logo.svg" alt="Ganmack Film">
+    </h1>
+    <section>
+      <form action="post">
+        <input type="text" id="user_id" placeholder="id">
+        <input type="password" id="user_pw" placeholder="pw">
+      </form>
 
-        <p>and. Doyeon Noh</p>
-      </div>
-    </footer>
+      <button type="submit" onclick="login();">Login</button>
+    </section>
   </body>
+  
+  <script>
+    function login(){
+      let id = document.getElementById('user_id').value;
+      let pw = document.getElementById('user_pw').value;
+
+      if(id == ''){
+        alert('아이디를 입력해주세요');
+        document.getElementById('user_id').focus().setSelectionRange(0, 999);
+        return false;
+      }
+
+      if(pw == ''){
+        alert('비밀번호를 입력해주세요');
+        document.getElementById('user_pw').focus().setSelectionRange(0, 999);
+        return false;
+      }
+
+    /*  $.ajax({
+        url: '',
+        type: 'POST',
+        dataType: 'JSON',
+        data: {id:id, pw:pw},
+        success: function(data){
+          if(data.status){ */
+            window.location.href="/ganmack";
+            document.getElementById('user_id').value='';
+            document.getElementById('user_pw').value='';
+          /* }
+        }
+      }); */
+    }
+  </script>
+
+
 </html>
