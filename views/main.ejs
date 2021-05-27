@@ -2,6 +2,14 @@
 <html>
   <head>
     <title>GANMACK FILM FESTIVAL</title>
+    
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+    <!-- Vendor 부트스트랩 CSS -->
+    <!-- <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/vendor/magnific-popup/magnific-popup.min.css">
+
     <link rel='stylesheet' href='/stylesheets/font.css' />
     <link rel='stylesheet' href='/stylesheets/reset.css' />
     <link rel='stylesheet' href='/stylesheets/main.css' />
@@ -27,51 +35,80 @@
           <p>간맥영화제는 어떠한 술도 존중합니다</p>
         </div>
       </section>
-      <section class="posters container">
+      <section class="posters container tab-pane">
         <em>Film Festival</em>
         <h2>권위있는 간맥영화제의<br />쟁쟁한 수상 후보들을 만나보세요</h2>
-        <ul>
-          <li>
-            <a href="#">
-              <img src="/img/poster1.jpg" alt="new person">
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="/img/poster2.jpg" alt="new person">
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="/img/poster3.jpg" alt="new person">
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="/img/poster4.png" alt="new person">
-            </a>
-          </li>
-        </ul>
-      </section>
-      <section class="cummu container">
-        <div>
-          <em>Community</em>
-          <h2>영화에 대한<br />여러분의 의견을 들려주세요</h2>
-        </div>
-        <div>
-          <input type="text" placeholder="내용을 입력해주세요">
-          <input type="text" placeholder="닉네임을 입력해주세요">
-        </div>
-        <div>
-          <ul>
-            <li>
-              <em>작성자</em>
-              <p>내용내용내용내용내용내용내용내용내용내용내용내용내용내용</p>
+        <div class="swiper-container lightbox" data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}}">
+          <ul class="swiper-wrapper zoom-gallery">
+            <li class="swiper-slide">
+              <a href="/img/poster1.jpg" title="Mine t.Type 포스터">
+                <img src="/img/poster1.jpg" alt="Project">
+              </a>
+            </li>
+            <li class="swiper-slide">
+              <a href="/img/poster2.jpg" title="새사람 B 컷">
+                <img src="/img/poster2.jpg" alt="new person">
+              </a>
+            </li>
+            <li class="swiper-slide">
+              <a href="/img/poster3.jpg" title="새사람 메인 포스터">
+                <img src="/img/poster3.jpg" alt="new person">
+              </a>
+            </li>
+            <li class="swiper-slide">
+              <a href="/img/poster4.png" title="The Beer 어떤 아이 이야기">
+                <img src="/img/poster4.png" alt="new person">
+              </a>
             </li>
           </ul>
         </div>
+        </div>
       </section>
-      <section class="container">
+      <section class="cummu">
+        <div class="commu_bg"></div>
+        <div class="container">
+          <div>
+            <div>
+              <em>Community</em>
+              <h2>영화에 대한<br />여러분의 의견을<br />들려주세요</h2>
+            </div>
+            <div class="form">
+              <input type="text" placeholder="내용을 입력해주세요" />
+              <div><span>BY.</span><input type="text" id="nick" placeholder="닉네임을 입력해주세요"><span>등록</em></div>
+            </div>
+          </div>
+          <div class="swiper-container">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <a>
+                  <em>BY. 달영</em>
+                  <p>주인공들 연기도 좋고 웃으면서 볼 수 있는 영화인거 같아요!!</p>
+                </a>
+              </li>
+              <li class="swiper-slide">
+                <a>
+                  <em>BY. 닉네임없음</em>
+                  <p>반전에 반전에 반전!!주연 조연 배우들 모두 연기력에 감탄했어요마지막 쿠키 영상에 배우님들 너무 귀여우세요??한번 두번 세번 보세요!!!</p>
+                </a>
+              </li>
+              <li class="swiper-slide">
+                <em>BY. syapd</em>
+                <p>짜릿하고 끝까지 화려한 영화!! 간만에 신나게 봐서 정말 재밌었어요</p>
+              </li>
+              <li class="swiper-slide">
+                <em>BY. 핑퐁핑퐁</em>
+                <p>기대안하고 보고왔는데 온 몸에 힘주고 집중해서 끝까지 너무 재밌게 봤어요ㅋㅋ 정말 꼭 보세요 배우님들 하나같이 능글능글 웃기고연기 좋고 너무 재밌네용!!ㅋㅋ</p>
+              </li>
+              <li class="swiper-slide">
+                <em>BY. guswl</em>
+                <p>새로운 소재의 영화라 더 재밌었음!!배우들 연기도 너무 좋고 뒤로 갈수록 더 흥미진진해짐!</p>
+              </li>
+            </ul>
+            <span>More</span>
+          </div>
+        </div>
+      </section>
+      <section class="container sub_menu">
         <div>
           <em>Alcohol</em>
           <h2>당신의 간맥타임을<br />소개해주세요</h2>
@@ -100,5 +137,45 @@
         <p>되는건가!!</p>
       </div>
     </footer>
+
+    <!-- Vendor -->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/vendor/swiper-4.5.1/dist/js/swiper.min.js"></script>
+    <script src="/vendor/jquery.cookie/jquery.cookie.min.js"></script>
+    <script src="/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        $('.zoom-gallery').magnificPopup({
+          delegate: 'a',
+          type: 'image',
+          closeOnContentClick: false,
+          closeBtnInside: false,
+          mainClass: 'mfp-with-zoom mfp-img-mobile',
+          image: {
+            verticalFit: true,
+            titleSrc: function(item) {
+              return item.el.attr('title');
+            }
+          },
+          gallery: {
+            enabled: true
+          },
+          zoom: {
+            enabled: true,
+            duration: 300, // don't foget to change the duration also in CSS
+            opener: function(element) {
+              return element.find('img');
+            }
+          }
+          
+        });
+
+        new Swiper('.swiper-container', {
+          slidesPerView: 'auto',
+        });
+      });
+    </script>
   </body>
 </html>

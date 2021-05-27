@@ -35,7 +35,7 @@ router.post('/login',async function(req, res) {
     })
     
     if(user){
-       let token = jwt.sign({
+        let token = jwt.sign({
           id: id
         },
           config.jwt.secret ,
