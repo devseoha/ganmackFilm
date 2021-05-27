@@ -1,14 +1,27 @@
 /* ganmack.css */
 .ganmack .container{width: 1200px; margin: 0 auto;}
-.ganmack img{width: 360px; height: auto;}
+.ganmack img{width: 290px; height: 420px;}
 
 /* layout */
-.ganmack header{width: 100%; position: fixed; top: 0; left: 0; padding: 50px 0;}
-.ganmack header img{width: 300px;}
-.ganmack .main_banner{display: flex; align-items: center; height: 100vh; background: url(/img/main.jpg) no-repeat 50% 0; background-size: cover;}
+.ganmack header{z-index: 5; width: 100%; position: fixed; top: 0; left: 0; padding: 35px 0;}
+.ganmack header img{width: 300px; height: auto;}
+.ganmack .main_banner{z-index: 3; position: relative; display: flex; align-items: center; height: 100vh; background: url(/img/main.jpg) no-repeat 50% 0; background-size: cover;}
+.ganmack .posters{padding: 50px 0;}
 
 .ganmack header>div{display: flex; justify-content: space-between; align-items: flex-end;}
 .ganmack header>div h1,.ganmack header>div h1 span,.ganmack header>div ul li a{color: #fff;}
 .ganmack header>div ul{display: flex; justify-content: space-between; align-items: center;}
 .ganmack header>div ul li a{font-size: 20px; margin-left: 30px; font-weight: 200; opacity: 0.5;}
 .ganmack header>div ul li.on a,.ganmack header>div ul li:hover a{color: #fff; opacity: 1;}
+
+.ganmack .main_banner .container{z-index: 2; position: relative;/*  top: -50px; */}
+.ganmack .main_banner .container h2{margin-bottom: 50px; font-size: 60px; color: #fff; font-weight: 600; line-height: 1.4;}
+.ganmack .main_banner .container p{font-size: 20px; color: #fff;}
+.ganmack .main_banner .bg{position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6);}
+
+.ganmack .posters{padding: 100px 0;}
+.ganmack .posters>em{font-size: 16px;}
+.ganmack .posters>h2{font-size: 42px; font-weight: 600; line-height: 1.3; margin: 30px 0 50px;}
+.ganmack .posters ul{display: flex; justify-content: flex-start; align-items: flex-start;}
+.ganmack .posters ul li{margin-right: 30px;}
+.ganmack .posters ul li a{display: block; width: 100%; height: 100%;}

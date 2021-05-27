@@ -12,6 +12,7 @@ html,body,div,span,h1,h2,h3,h4,h5,h6,p,a,em,img,strong,i,dl,dt,dd,ol,ul,li,field
   word-break: keep-all;
   box-sizing: border-box;
   outline: none;
+  font-family: 'Noto Sans KR';
 }
 ol,ul,li {
   list-style: none;
