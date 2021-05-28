@@ -73,36 +73,20 @@
               <h2>영화에 대한<br />여러분의 의견을<br />들려주세요</h2>
             </div>
             <div class="form">
-              <input type="text" placeholder="내용을 입력해주세요" />
-              <div><span>BY.</span><input type="text" id="nick" placeholder="닉네임을 입력해주세요"><span onclick="aboutGanmack()">등록</em></div>
+              <input type="text" id="content" placeholder="내용을 입력해주세요" />
+              <div><span>BY.</span><input type="text" id="nickname" placeholder="닉네임을 입력해주세요"><span onclick="aboutGanmack()">등록</em></div>
             </div>
           </div>
           <div class="swiper-container">
             <ul class="swiper-wrapper">
-              <li class="swiper-slide">
-                <a>
-                  <em>BY. 달영</em>
-                  <p>주인공들 연기도 좋고 웃으면서 볼 수 있는 영화인거 같아요!!</p>
-                </a>
-              </li>
-              <li class="swiper-slide">
-                <a>
-                  <em>BY. 닉네임없음</em>
-                  <p>반전에 반전에 반전!!주연 조연 배우들 모두 연기력에 감탄했어요마지막 쿠키 영상에 배우님들 너무 귀여우세요??한번 두번 세번 보세요!!!</p>
-                </a>
-              </li>
-              <li class="swiper-slide">
-                <em>BY. syapd</em>
-                <p>짜릿하고 끝까지 화려한 영화!! 간만에 신나게 봐서 정말 재밌었어요</p>
-              </li>
-              <li class="swiper-slide">
-                <em>BY. 핑퐁핑퐁</em>
-                <p>기대안하고 보고왔는데 온 몸에 힘주고 집중해서 끝까지 너무 재밌게 봤어요ㅋㅋ 정말 꼭 보세요 배우님들 하나같이 능글능글 웃기고연기 좋고 너무 재밌네용!!ㅋㅋ</p>
-              </li>
-              <li class="swiper-slide">
-                <em>BY. guswl</em>
-                <p>새로운 소재의 영화라 더 재밌었음!!배우들 연기도 너무 좋고 뒤로 갈수록 더 흥미진진해짐!</p>
-              </li>
+              <% for(var i=0; i<list.length;i++){ %>
+                <li class="swiper-slide">
+                  <a>
+                    <em>BY. <%= list[i].nickname %></em>
+                    <p><%= list[i].content %></p>
+                  </a>
+                </li>
+              <% } %>
             </ul>
             <span>More</span>
           </div>
@@ -200,18 +184,19 @@
       });
 
       function aboutGanmack(){
+        let nickname = $('#nickname').val();
+        let content = $('#content').val();
+
         $.ajax({
           url: '/aboutGanmack',
           type: 'POST',
           dataType: 'JSON',
-          data: {content:"",nickname:""},
+          data: {content:content,nickname:nickname},
           success: function(data){
-            console.log(data)
-            // if(data.status){
-            //   location.reload();
-            // }else{
-            //   alert("아이디/비밀번호를 확인해주세요. \n기억안나면 개발병아리김현지 혹은 개발천재강서하에게 문의하세요. ");
-            // }
+            if(data.status){
+              alert("댓글이 등록되었습니다.");
+              location.reload();
+            }
           }
         });
       }
