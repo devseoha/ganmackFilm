@@ -74,7 +74,7 @@
             </div>
             <div class="form">
               <input type="text" placeholder="내용을 입력해주세요" />
-              <div><span>BY.</span><input type="text" id="nick" placeholder="닉네임을 입력해주세요"><span>등록</em></div>
+              <div><span>BY.</span><input type="text" id="nick" placeholder="닉네임을 입력해주세요"><span onclick="aboutGanmack()">등록</em></div>
             </div>
           </div>
           <div class="swiper-container">
@@ -176,6 +176,22 @@
           slidesPerView: 'auto',
         });
       });
+      function aboutGanmack(){
+        $.ajax({
+        url: '/aboutGanmack',
+        type: 'POST',
+        dataType: 'JSON',
+        data: {content:"",nickname:""},
+        success: function(data){
+          console.log(data)
+          // if(data.status){
+          //   location.reload();
+          // }else{
+          //   alert("아이디/비밀번호를 확인해주세요. \n기억안나면 개발천재김현지 혹은 개발병풍강서하에게 문의하세요. ");
+          // }
+        }
+      });
+      }
     </script>
   </body>
 </html>

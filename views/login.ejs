@@ -15,8 +15,8 @@
     </h1>
     <section>
       <form action="post">
-        <input type="text" id="user_id" placeholder="id">
-        <input type="password" id="user_pw" placeholder="pw">
+        <input type="text" id="user_id" placeholder="id" onkeyup="enterkey();">
+        <input type="password" id="user_pw" placeholder="pw" onkeyup="enterkey();">
       </form>
 
       <button type="submit" onclick="login();">Login</button>
@@ -24,6 +24,13 @@
   </body>
   
   <script>
+    function enterkey() {
+      if (window.event.keyCode == 13) {
+        login();
+      }
+    }
+
+
     function login(){
       let id = document.getElementById('user_id').value;
       let pw = document.getElementById('user_pw').value;
@@ -48,6 +55,8 @@
         success: function(data){
           if(data.status){
             location.reload();
+          }else{
+            alert("아이디/비밀번호를 확인해주세요. \n기억안나면 개발천재김현지 혹은 개발병풍강서하에게 문의하세요. ");
           }
         }
       });

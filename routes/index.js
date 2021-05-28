@@ -51,4 +51,27 @@ router.post('/login',async function(req, res) {
     throw err;
   }
 });
+
+// 어바웃 간맥 한줄쓰기
+router.post('/aboutGanmack',async function(req, res) {
+  let {nickname, content} = req.body;
+  try{
+    // let user = await db.user.findOne({
+    //   attributes : [
+    //     'id',
+    //   ],
+    //   where: {
+    //     id: id,
+    //     password : password
+    //   }
+    // })
+    
+    res.status(200).send(resResult(true, 200, "", ""));
+  
+  } catch (err) {
+    throw err;
+  }
+});
+
+
 module.exports = router;
