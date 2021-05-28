@@ -4,15 +4,18 @@
 
 /* layout */
 .ganmack header{z-index: 5; width: 100%; position: fixed; top: 0; left: 0; padding: 35px 0;}
+.ganmack header.active{background: #fff; border-bottom: 1px solid rgba(0,0,0,0.3);}
 .ganmack header img{width: 300px; height: auto;}
 .ganmack .main_banner{z-index: 3; position: relative; display: flex; align-items: center; height: 100vh; background: url(/img/main.jpg) no-repeat 50% 0; background-size: cover;}
 .ganmack .posters{padding: 50px 0;}
 
 .ganmack header>div{display: flex; justify-content: space-between; align-items: flex-end;}
-.ganmack header>div h1,.ganmack header>div h1 span,.ganmack header>div ul li a{color: #fff;}
 .ganmack header>div ul{display: flex; justify-content: space-between; align-items: center;}
-.ganmack header>div ul li a{font-size: 20px; margin-left: 30px; font-weight: 200; opacity: 0.5;}
+.ganmack header>div ul li a{color: #fff; font-size: 20px; margin-left: 30px; font-weight: 200; opacity: 0.4;}
 .ganmack header>div ul li.on a,.ganmack header>div ul li:hover a{color: #fff; opacity: 1;}
+
+.ganmack header.active>div ul li a{color: #000; opacity: 0.2;}
+.ganmack header.active>div ul li.on a,.ganmack header.active>div ul li:hover a{opacity: 1;}
 
 .ganmack .main_banner .container{z-index: 2; position: relative;/*  top: -50px; */}
 .ganmack .main_banner .container h2{margin-bottom: 50px; font-size: 60px; color: #fff; font-weight: 600; line-height: 1.4;}
@@ -30,7 +33,7 @@
 .ganmack img.mfp-img{width: auto; height: auto;}
 
 .ganmack .cummu{position: relative; padding: 100px 0; background: url(/img/commu.jpg) no-repeat 50% 0; background-size: cover;}
-.ganmack .cummu .commu_bg{z-index: 1; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8);}
+.ganmack .cummu .commu_bg{z-index: 1; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9);}
 .ganmack .cummu .container{z-index: 3; position: relative; padding: 0;}
 .ganmack .cummu .container>div{display: flex; justify-content: space-between; align-items: flex-end;}
 .ganmack .cummu .container>div em{font-size: 16px; margin-left: 5px; color: #ccc;}
@@ -58,6 +61,41 @@
 .ganmack .cummu .container>div.swiper-container span{display: block; font-size: 14px; color: #ccc; cursor: pointer; text-align: right;}
 .ganmack .cummu .container>div.swiper-container span:hover{color: #fff;}
 
-.ganmack .sub_menu{display: flex; justify-content: space-between; align-items: flex-start; padding: 70px 0;}
-.ganmack .sub_menu>div:nth-of-type(1){width: calc(70% - 20px); padding: 50px 70px; background: url(/img/beer.jpg) no-repeat 50% 0; background-size: cover; box-sizing: border-box;}
-.ganmack .sub_menu>div:nth-of-type(2){width: 30%;}
+.ganmack .sub_menu{display: flex; justify-content: space-between; padding: 100px 0;}
+.ganmack .sub_menu div a{display: block; width: 100%; height: 100%;}
+.ganmack .sub_menu div em{display: inline-block; position: relative; font-size: 16px; font-weight: 300; padding-bottom: 30px; margin-bottom: 50px;}
+.ganmack .sub_menu div em::after{position: absolute; bottom: 0; left: 0; content: ""; display: block; width: 30px; height: 1px; background: #000;}
+.ganmack .sub_menu div h2{font-size: 26px; font-weight: 600; line-height: 1.3;}
+
+.ganmack .sub_menu>div:nth-of-type(1){position: relative; width: calc(67% - 20px); padding: 50px; box-sizing: border-box;}
+.ganmack .sub_menu>div:nth-of-type(2){width: 33%;}
+
+.ganmack .sub_menu>div:nth-of-type(1)>div{z-index: 3; position: relative;}
+.ganmack .sub_menu>div:nth-of-type(1)>.alcohol_bg{z-index: 1; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(/img/beer.jpg) no-repeat 0 43%; background-size: 130%; opacity: 0.4;}
+
+.ganmack .sub_menu>div:nth-of-type(1) h2{margin-bottom: 200px;}
+
+.ganmack .sub_menu>div:nth-of-type(2){height: auto;}
+.ganmack .sub_menu>div:nth-of-type(2) div{height: calc(50% - 10px);}
+.ganmack .sub_menu>div:nth-of-type(2) div a{display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; padding: 35px;}
+.ganmack .sub_menu>div:nth-of-type(2) div em{margin-bottom: 0;}
+.ganmack .sub_menu>div:nth-of-type(2) div:nth-of-type(1){margin-bottom: 20px; background: #252525;}
+.ganmack .sub_menu>div:nth-of-type(2) div:nth-of-type(1) em,.ganmack .sub_menu>div:nth-of-type(2) div:nth-of-type(1) h2{color: #fff;}
+.ganmack .sub_menu>div:nth-of-type(2) div:nth-of-type(1) em::after{background: #fff;}
+.ganmack .sub_menu>div:nth-of-type(2) div:nth-of-type(2){background: #e6e6e6;}
+
+.ganmack footer{width: 100%; background: #252525; padding: 50px 0;}
+.ganmack footer img{width: 223px; height: auto;}
+
+.ganmack footer .container{display: flex; justify-content: space-between; align-items: flex-end;}
+.ganmack footer .container div.info{display: flex; justify-content: flex-start;}
+.ganmack footer .container div.info h3{margin-right: 65px;}
+.ganmack footer .container div.info>div{display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; margin-top: 3px;}
+.ganmack footer .container div.info div div{margin-bottom: 10px;}
+.ganmack footer .container div.info p{color: #999; opacity: 0.7; font-weight: lighter; line-height: 1.5; font-size: 14px;}
+
+.ganmack footer .container div.copy p{color: #999; opacity: 0.7; font-weight: lighter; line-height: 1.5; font-size: 14px;}
+.ganmack footer .container div.copy p span{color: #999; font-weight: lighter; line-height: 1.5; font-size: 14px;}
+
+.ganmack .top{width: 100%; background: #111111; padding: 15px 0; text-align: center; cursor: pointer;}
+.ganmack .top p{color: #ccc; font-weight: 500; font-size: 14px;}

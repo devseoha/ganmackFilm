@@ -110,33 +110,55 @@
       </section>
       <section class="container sub_menu">
         <div>
-          <em>Alcohol</em>
-          <h2>당신의 간맥타임을<br />소개해주세요</h2>
-          <p>Alcohol 바로가기</p>
+          <div class="alcohol_bg"></div>
+          <div>
+            <a href="#">
+              <em>Alcohol</em>
+              <h2>당신의 간맥타임을<br />소개해주세요</h2>
+              <p>Alcohol 바로가기</p>
+            </a>
+          </div>
         </div>
         <div>
           <div>
-            <em>Alcohol Record</em>
-            <h2>주정 기록들을 <br />보실 수 있습니다</h2>
+            <a href="#">
+              <em>Alcohol Record</em>
+              <h2>주정 기록들을 <br />보실 수 있습니다</h2>
+            </a>
           </div>
           <div>
-            <em>Alcohol Review</em>
-            <h2>주류 리뷰를 <br />보실 수 있습니다</h2>
+            <a href="#">
+              <em>Alcohol Review</em>
+              <h2>주류 리뷰를 <br />보실 수 있습니다</h2>
+            </a>
           </div>
         </div>
       </section>
     </div>
     <footer>
       <div class="container">
-        <h3>GANMACK.FILM <span>festival.</span></h3>
-        <p>planner. Minji Seo</p>
-        <p>designer. Gahee Kim / Yeeun Kim</p>
-        <p>developer. Seoha Kang / Hyunji Kim</p>
-
-        <p>and. Doyeon Noh</p>
-        <p>되는건가!!</p>
+        <div class="info">
+          <h3>
+            <img src="/img/logo.svg" alt="">
+          </h3>
+          <div>
+            <div>
+              <p>Planner. Minji Seo</p>
+              <p>Designer. Gahee Kim / Yeeun Kim</p>
+              <p>Developer. Seoha Kang / Hyunji Kim</p>
+            </div> 
+            <p>And. Doyeon Noh</p>
+          </div>
+        </div>
+        <div class="copy">
+          <% let ty = new Date().getFullYear(); %>
+          <p>Copyright <span id="this_year"><%- ty %></span> GANMACK Film Life</p>
+        </div>
       </div>
     </footer>
+    <div class="top" onclick="scTop()">
+      <p>TOP</p>
+    </div>
 
     <!-- Vendor -->
     <script src="/vendor/jquery/jquery.min.js"></script>
@@ -164,7 +186,7 @@
           },
           zoom: {
             enabled: true,
-            duration: 300, // don't foget to change the duration also in CSS
+            duration: 300,
             opener: function(element) {
               return element.find('img');
             }
@@ -176,22 +198,53 @@
           slidesPerView: 'auto',
         });
       });
+
       function aboutGanmack(){
         $.ajax({
-        url: '/aboutGanmack',
-        type: 'POST',
-        dataType: 'JSON',
-        data: {content:"",nickname:""},
-        success: function(data){
-          console.log(data)
-          // if(data.status){
-          //   location.reload();
-          // }else{
-          //   alert("아이디/비밀번호를 확인해주세요. \n기억안나면 개발천재김현지 혹은 개발병풍강서하에게 문의하세요. ");
-          // }
+          url: '/aboutGanmack',
+          type: 'POST',
+          dataType: 'JSON',
+          data: {content:"",nickname:""},
+          success: function(data){
+            console.log(data)
+            // if(data.status){
+            //   location.reload();
+            // }else{
+            //   alert("아이디/비밀번호를 확인해주세요. \n기억안나면 개발병아리김현지 혹은 개발천재강서하에게 문의하세요. ");
+            // }
+          }
+        });
+      }
+
+      /* header Active when scroll */
+      $(window).scroll(function(){
+        let st = $(this).scrollTop();
+
+        if(st > 0){
+          $('header').addClass('active');
+          $('header h1 img').attr('src','/img/logo_b.svg');
+        }else{
+          $('header').removeClass('active');
+          $('header h1 img').attr('src','/img/logo.svg');
         }
       });
+
+      /* header Active when document ready */
+      let st = $(this).scrollTop();
+
+      if(st > 0){
+        $('header').addClass('active');
+        $('header h1 img').attr('src','/img/logo_b.svg');
+      }else{
+        $('header').removeClass('active');
+        $('header h1 img').attr('src','/img/logo.svg');
       }
+
+      /* scroll-top */
+      function scTop(){
+        $('html, body').stop().animate({scrollTop: '0'}, 1000);
+      };  
+
     </script>
   </body>
 </html>
