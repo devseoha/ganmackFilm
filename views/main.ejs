@@ -20,25 +20,28 @@
     <header>
       <div class="container">
         <h1><img src="/img/logo.svg" alt=""></h1>
-        <ul>
+        <ul class="menu_web">
           <li class="on"><a href="#">About</a></li>
           <li><a href="#">Nominees</a></li>
           <li><a href="#">Commu</a></li>
           <li><a href="#">Alcohol</a></li>
         </ul>
+        <div class="drawer_btn">
+          <img src="/img/drawer.svg" alt="">
+        </div>
       </div>
     </header>
     <div>
       <section class="main_banner">
         <div class="bg"></div>
         <div class="container">
-          <h2>주종은<br />우리의 삶의 방식이다</h2>
+          <h2>주종은<br />우리의 삶의 <br class="mob" />방식이다</h2>
           <p>간맥영화제는 어떠한 술도 존중합니다</p>
         </div>
       </section>
       <section class="posters container tab-pane">
         <em>Film Festival</em>
-        <h2>권위있는 간맥영화제의<br />쟁쟁한 수상 후보들을 만나보세요</h2>
+        <h2>권위있는 간맥영화제의<br />쟁쟁한 수상 후보들을 지금 바로 만나보세요</h2>
         <div class="swiper-container lightbox" data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}}">
           <ul class="swiper-wrapper zoom-gallery">
             <li class="swiper-slide">
@@ -97,7 +100,6 @@
               </a>
             </li>
           </ul>
-        </div>
         </div>
       </section>
       <section class="cummu">
@@ -211,12 +213,15 @@
               return element.find('img');
             }
           }
-          
         });
 
         new Swiper('.swiper-container', {
           slidesPerView: 'auto',
         });
+
+        /* if($(window).width() < 991){
+          $('header h1 img').attr('src','/img/logo_verti.svg');
+        } */
       });
 
       function aboutGanmack(){
@@ -237,6 +242,8 @@
         });
       }
 
+      
+
       /* header Active when scroll */
       $(window).scroll(function(){
         let st = $(this).scrollTop();
@@ -244,9 +251,11 @@
         if(st > 0){
           $('header').addClass('active');
           $('header h1 img').attr('src','/img/logo_b.svg');
+          $('header .drawer_btn img').attr('src','/img/drawer_b.svg');
         }else{
           $('header').removeClass('active');
           $('header h1 img').attr('src','/img/logo.svg');
+          $('header .drawer_btn img').attr('src','/img/drawer.svg');
         }
       });
 
@@ -256,9 +265,11 @@
       if(st > 0){
         $('header').addClass('active');
         $('header h1 img').attr('src','/img/logo_b.svg');
+        $('header .drawer_btn img').attr('src','/img/drawer_b.svg');
       }else{
         $('header').removeClass('active');
         $('header h1 img').attr('src','/img/logo.svg');
+        $('header .drawer_btn img').attr('src','/img/drawer.svg');
       }
 
       /* scroll-top */
